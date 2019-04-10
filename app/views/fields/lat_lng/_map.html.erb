@@ -18,7 +18,7 @@
       marker.addTo(map);
     };
 
-    var setMarker = function (latlng) {
+    var setMarker = function (latlng, name, address) {
       if (marker === undefined) {
         createMarker(latlng);
       } else {
@@ -26,6 +26,8 @@
       }
       $('.latlng-lat').val(latlng.lat);
       $('.latlng-lng').val(latlng.lng);
+      $('#location_name').val(name);
+      $('#location_address').val(address);
     };
 
     // Get the centre lat/lng from the field or the initial default if the field
@@ -60,10 +62,14 @@
           ]);
 
           <% if edit %>
-          setMarker({
-            lat: place.geometry.location.lat(),
-            lng: place.geometry.location.lng(),
-          });
+          setMarker(
+            {
+              lat: place.geometry.location.lat(),
+              lng: place.geometry.location.lng(),
+            },
+            place.name,
+            place.formatted_address
+          );
           <% end %>
         },
       })
