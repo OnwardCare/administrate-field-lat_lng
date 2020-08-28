@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "administrate-field-lat_lng"
-  spec.version       = "1.9.1"
+  spec.version       = "2.0.0"
   spec.authors       = ["Rich Daley"]
   spec.email         = ["rich@fishpercolator.co.uk"]
 
@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'administrate', '>= 0.8'
   spec.add_dependency 'leaflet-rails', '~> 1.0'
+  spec.add_dependency 'leaflet-awesome-markers-rails', '~> 3.0.0'
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
